@@ -1,0 +1,19 @@
+﻿{
+  "name": "Felps & Isabelly",
+  "short_name": "Felps&Isa",
+  "description": "Contador e árvore do relacionamento",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#04040a",
+  "theme_color": "#04040a",
+  "icons": [
+    {
+      "src": "assets/nossa-foto.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+

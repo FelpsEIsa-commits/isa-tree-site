@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Felps & Isabelly &#x1F430;&#x1F431;</title>
+  <meta name="theme-color" content="#04040a" id="themeColorMeta"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <!-- =======================
+       INTRO CINEMATOGR&#xC1;FICA
+       ======================= -->
+  <section class="intro" id="intro" aria-hidden="false">
+    <div class="intro-bg"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-grain"></div>
+    <div class="cutsceneOverlay" id="cutsceneOverlay" aria-hidden="true">
+      <div class="cutsceneVeil"></div>
+      <div class="cutsceneClock" id="cutsceneClock">16/09 &#x2022; 02:14</div>
+      <div class="cutsceneNote" id="cutsceneNote">ela cresceu</div>
+      <div class="cutsceneFlash" id="cutsceneFlash"></div>
+    </div>
+
+    <header class="intro-top">
+      <div class="intro-brand">
+        <span class="spark-dot"></span>
+        <span id="introTitle">Felps & Isabelly &#x1F430;&#x1F431;</span>
+      </div>
+      <div class="intro-pill" id="introPill">&#xC1;rvore do nosso relacionamento &#x1F338;</div>
+    </header>
+
+    <main class="intro-center">
+      <div class="tree-card" id="treeCard">
+        <div class="tree-head">
+          <div class="tree-kicker" id="treeKicker">&#x1F338; cresce com cuidado &#x2022; 1x por dia &#x1F430;</div>
+          <h1 class="tree-title">
+            uma &#xE1;rvore rosa <span class="grad">nascendo</span> pra gente.
+          </h1>
+          <p class="tree-sub" id="treeSub">
+            Clica em &#x201C;Regar hoje&#x201D; e v&#xEA; ela ficar mais bonita. (Ela lembra e vai evoluindo.) &#x1F431;&#x2728;
+          </p>
+        </div>
+
+        <div class="tree-stage">
+          <div class="tree-wrap level-0" id="treeWrap" aria-label="&#xC1;rvore rosa animada">
+            <!-- camadas de luz -->
+            <div class="tree-glow"></div>
+            <div class="tree-glow g2"></div>
+
+            <!-- part&#xED;culas + p&#xE9;talas -->
+            <div class="petals" id="petals"></div>
+            <div class="particles" id="particles"></div>
+            <div class="finale-rain" id="finaleRain"></div>
+
+            <!-- SVG cinematogr&#xE1;fico -->
+            <svg class="tree" viewBox="0 0 900 540" role="img">
+              <defs>
+                <linearGradient id="trunkGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(255,255,255,.95)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,.70)"/>
+                </linearGradient>
+
+                <radialGradient id="bloomGrad" cx="50%" cy="40%" r="60%">
+                  <stop id="bloomStop0" offset="0%" stop-color="rgba(255,195,225,.98)"/>
+                  <stop id="bloomStop1" offset="55%" stop-color="rgba(255,120,185,.92)"/>
+                  <stop id="bloomStop2" offset="100%" stop-color="rgba(255,120,185,.00)"/>
+                </radialGradient>
+
+                <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feColorMatrix result="pink" type="matrix"
+                    values="1 0 0 0 0
+                            0 0.65 0 0 0
+                            0 0 0.75 0 0
+                            0 0 0 0.85 0"/>
+                  <feMerge>
+                    <feMergeNode in="pink"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+
+                <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="rgba(0,0,0,.55)"/>
+                </filter>
+              </defs>
+
+              <!-- ch&#xE3;o -->
+              <path class="ground" d="M90 475 C210 440, 320 510, 450 475 C560 445, 660 500, 810 475"
+                fill="none" stroke="rgba(255,255,255,.18)" stroke-width="10" stroke-linecap="round"/>
+
+              <!-- tronco + galhos (cinem&#xE1;tico: v&#xE1;rios strokes) -->
+              <g filter="url(#shadow)">
+                <path class="stroke trunk" stroke="url(#trunkGrad)" d="
+                  M450 470
+                  C446 430, 445 400, 448 372
+                  C452 338, 470 318, 468 285
+                  C466 255, 438 244, 432 214
+                  C426 186, 448 160, 474 150" />
+
+                <path class="stroke branch b1" stroke="rgba(255,255,255,.80)" d="
+                  M446 355
+                  C392 350, 350 330, 320 300
+                  C290 270, 275 245, 278 215" />
+
+                <path class="stroke branch b2" stroke="rgba(255,255,255,.78)" d="
+                  M456 345
+                  C520 336, 565 312, 600 280
+                  C635 248, 650 222, 644 190" />
+
+                <path class="stroke branch b3" stroke="rgba(255,255,255,.76)" d="
+                  M430 250
+                  C385 240, 350 220, 325 195
+                  C302 172, 290 150, 295 120" />
+
+                <path class="stroke branch b4" stroke="rgba(255,255,255,.76)" d="
+                  M470 248
+                  C520 232, 560 210, 590 180
+                  C618 152, 635 126, 628 98" />
+
+                <!-- galhinhos extras (aparecem por n&#xED;vel) -->
+                <path class="stroke twig t1" stroke="rgba(255,255,255,.62)" d="M360 305 C340 285, 330 265, 332 240"/>
+                <path class="stroke twig t2" stroke="rgba(255,255,255,.62)" d="M545 300 C565 280, 575 260, 570 235"/>
+                <path class="stroke twig t3" stroke="rgba(255,255,255,.58)" d="M400 200 C380 186, 368 170, 370 150"/>
+                <path class="stroke twig t4" stroke="rgba(255,255,255,.58)" d="M505 198 C530 184, 545 165, 542 145"/>
+              </g>
+
+              <!-- copa (nebulosa rosa) -->
+              <g class="canopy" filter="url(#softGlow)">
+                <circle class="mist m1" cx="360" cy="180" r="120" fill="url(#bloomGrad)"/>
+                <circle class="mist m2" cx="520" cy="165" r="140" fill="url(#bloomGrad)"/>
+                <circle class="mist m3" cx="450" cy="120" r="160" fill="url(#bloomGrad)"/>
+              </g>
+
+              <!-- flores (bolinhas brilhantes por n&#xED;vel) -->
+              <g class="blooms" filter="url(#softGlow)">
+                <!-- base -->
+                <circle class="b base" cx="474" cy="150" r="12"/>
+                <circle class="b base" cx="320" cy="300" r="11"/>
+                <circle class="b base" cx="600" cy="280" r="11"/>
+                <circle class="b base" cx="325" cy="195" r="10"/>
+                <circle class="b base" cx="590" cy="180" r="10"/>
+
+                <!-- extras (revelados por level) -->
+                <circle class="b e e1" cx="420" cy="214" r="12"/>
+                <circle class="b e e2" cx="468" cy="285" r="11"/>
+                <circle class="b e e3" cx="360" cy="210" r="10"/>
+                <circle class="b e e4" cx="535" cy="205" r="10"/>
+                <circle class="b e e5" cx="395" cy="160" r="10"/>
+                <circle class="b e e6" cx="505" cy="150" r="10"/>
+                <circle class="b e e7" cx="410" cy="300" r="10"/>
+                <circle class="b e e8" cx="500" cy="305" r="10"/>
+                <circle class="b e e9" cx="450" cy="90" r="12"/>
+                <circle class="b e e10" cx="560" cy="120" r="11"/>
+                <circle class="b e e11" cx="340" cy="120" r="11"/>
+              </g>
+            </svg>
+
+            <!-- overlay de &#xE1;gua (cinema) -->
+            <div class="water" id="water"></div>
+            <div class="watering-can" id="wateringCan" aria-hidden="true">
+              <svg class="can-svg" viewBox="0 0 120 120" role="img" aria-hidden="true">
+                <path d="M22 58 C22 44, 34 34, 48 34 L75 34 C87 34, 96 42, 98 54 L99 62 C100 74, 90 84, 78 84 L46 84 C32 84, 22 74, 22 60 Z" fill="rgba(255,255,255,.88)"/>
+                <path d="M76 48 L102 45 C110 44, 115 48, 116 55 C117 62, 113 67, 105 68 L86 70" fill="none" stroke="rgba(255,255,255,.86)" stroke-width="9" stroke-linecap="round"/>
+                <path d="M31 42 C35 28, 49 20, 63 22 C71 23, 79 28, 84 35" fill="none" stroke="rgba(255,255,255,.80)" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+              <div class="can-stream"></div>
+              <div class="can-drops" id="canDrops"></div>
+            </div>
+
+            <!-- HUD de n&#xED;vel -->
+            <div class="tree-hud">
+              <div class="hud-pill" id="hudLevel">&#x1F338; n&#xED;vel 0/10</div>
+              <div class="hud-pill" id="hudStatus">&#x1F430; pronto</div>
+            </div>
+            <div class="finale-center-badge" id="finaleCenterBadge">&#xC1;rvore Completa &#x1F338;</div>
+          </div>
+
+          <div class="tree-actions">
+            <button class="btn" id="btnWater">Regar hoje &#x1F430;&#x1F4A7;</button>
+            <button class="btn secondary cutscene-enter" id="btnEnter">Entrar</button>
+            <button class="btn ghost" id="btnSkip">Pular</button>
+          </div>
+
+          <div class="tree-hint" id="treeHint">
+            Dica: rega 1x por dia. Cada dia = mais flores + mais brilho. &#x1F338;&#x1F431;
+          </div>
+          <div class="seasonFinale" id="seasonFinale" aria-live="polite">
+            <div class="seasonBadge" id="seasonBadge">&#xC1;rvore Completa &#x1F338;</div>
+            <p class="seasonText" id="seasonText">+1 temporada com a gente &#x1F430;&#x1F90D;</p>
+            <div class="seasonActions">
+              <button class="btn secondary" id="btnSaveMoment">Salvar esse momento &#x1F4F8;</button>
+              <button class="btn ghost" id="btnReplayFinale">Rever cutscene &#x1F39E;&#xFE0F;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- =======================
+       SITE (DEPOIS DA INTRO)
+       ======================= -->
+  <section class="site" id="site" aria-hidden="true">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <span class="dot"></span>
+          <span id="brandText">Felps & Isabelly</span>
+        </div>
+        <div class="topActions">
+          <div class="pill">desde <span id="sinceLabel"></span> &#x1F430;</div>
+          <button class="btn secondary btnTheme" id="btnTheme">&#x1F319; noite</button>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="card hero-left">
+          <div class="kicker">&#x2728; contadores</div>
+          <h1 class="title">tudo em tempo real <em>sempre</em>.</h1>
+          <p class="subtitle" id="subtitle">
+            Isa: abre, v&#xEA; o tempo, rega a &#xE1;rvore. &#x1F430;&#x1F431;&#x1F338;
+          </p>
+          <div class="monthBadge" id="monthBadge" hidden>M&#xEA;svers&#xE1;rio &#x1F430;&#x2728;</div>
+
+          <!-- relacionamento -->
+          <div class="bigCounter" id="bigCounter">
+            <div class="counterGrid">
+              <div class="mega">
+                <div class="lbl"><span class="glow">&#x1F430;</span> tempo juntos</div>
+                <div class="val" id="togetherMain">&#x2014;</div>
+                <div class="sub" id="togetherSub">&#x2014;</div>
+              </div>
+              <div class="mega">
+                <div class="lbl"><span class="glow">&#x1F431;</span> falta pra 1 ano</div>
+                <div class="val" id="leftMain">&#x2014;</div>
+                <div class="sub" id="leftSub">&#x2014;</div>
+              </div>
+            </div>
+
+            <div class="progressWrap">
+              <div class="progressTop">
+                <span>progresso do 1&#xBA; ano</span>
+                <span id="progressPct">&#x2014;</span>
+              </div>
+              <div class="bar"><span id="barFill"></span></div>
+            </div>
+          </div>
+
+          <!-- GTA 6 -->
+          <div class="gtaCard">
+            <div class="gtaTop">
+              <div class="gtaTitle" id="gtaTitle">GTA 6 &#x23F3;</div>
+              <div class="gtaDate" id="gtaDate">19/11/2026</div>
+            </div>
+            <div class="gtaGrid">
+              <div class="gtaBox">
+                <div class="gtaLbl">faltam</div>
+                <div class="gtaVal" id="gtaDays">&#x2014;</div>
+                <div class="gtaSub">dias</div>
+              </div>
+              <div class="gtaBox">
+                <div class="gtaLbl">e tamb&#xE9;m</div>
+                <div class="gtaVal2" id="gtaClock">&#x2014;</div>
+                <div class="gtaSub">&#x1F430;&#x1F431; (a gente ama)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="siteTreeWidget">
+            <div class="siteTreeHead">
+              <strong id="seasonValue">Temporada: 1</strong>
+              <span id="dayValue">Dia: 0/10</span>
+            </div>
+            <div class="seasonGrowth" aria-hidden="true"><span id="seasonGrowthFill"></span></div>
+            <div class="siteTreeHint" id="siteTreeHint">faltam 10 dias pra completar</div>
+            <div class="siteThemeRow" id="themeValue">Tema: Sakura Rosa &#x2728;</div>
+            <div class="siteTreeHead">
+              <strong id="siteTreeLevel">&#xC1;rvore hoje: n&#xED;vel 0/10</strong>
+              <span id="seasonLeft">faltam 10 dias</span>
+            </div>
+            <button class="btn secondary" id="btnWaterSite">Regar hoje &#x1F430;&#x1F4A7;</button>
+          </div>
+
+          <div class="letterCard" id="letterCard">
+            <button class="envelope" id="btnLetter" aria-expanded="false" type="button">
+              <span class="flap"></span>
+              <span class="seal">&#x1F48C;</span>
+              <span class="paper">
+                <strong>cartinha</strong>
+                <small>clica pra abrir</small>
+              </span>
+            </button>
+            <div class="letterBody" id="letterBody">
+              <p>Voc&#xEA; deixa meus dias leves, bonitos e sempre com motivo pra sorrir.</p>
+              <button class="btn secondary" id="btnSaveLetter">guardar</button>
+            </div>
+          </div>
+
+          <div class="btnrow">
+            <button class="btn" id="btnFx">&#x1F430;&#x1F431; subir emojis</button>
+            <button class="btn secondary" id="btnToggleMusic">pausar m&#xFA;sica</button>
+          </div>
+
+          <div class="playerBar" id="playerBar">
+            <button class="playerPlay" id="btnPlayerPlay" type="button">&#x23EF;</button>
+            <div class="playerMeta">
+              <small>agora tocando</small>
+              <strong id="playerNow">Chest Pain (I Love)</strong>
+            </div>
+            <input type="range" id="musicVolume" min="0" max="1" step="0.01" value="0.8" aria-label="Volume da m&#xFA;sica"/>
+          </div>
+        </div>
+
+        <div class="card hero-right">
+          <div class="photo">
+            <div class="photoSkeleton" id="photoSkeleton" aria-hidden="true"></div>
+            <img id="couplePhoto" src="assets/nossa-foto.png" alt="Felps e Isabelly" loading="lazy" decoding="async"/>
+            <div class="tag">16/09 &#x2022; 02:14 &#x1F430;</div>
+          </div>
+          <div class="miniStats">
+            <div class="stat">
+              <div class="label">hoje</div>
+              <div class="value" id="todayValue">&#x2014;</div>
+              <small id="todaySmall">&#x1F430;&#x1F3A7;</small>
+            </div>
+            <div class="stat">
+              <div class="label">mini miss&#xE3;o</div>
+              <div class="value">regar &#x1F338;</div>
+              <small>e ver os contadores &#x1F431;</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        feito por <span id="sig">Felps</span> &#x1F90D;&#x1F430;&#x1F431;
+      </footer>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div class="wanted" id="wanted">&#x1F693;&#x2B50; wanted level</div>
+    <div class="fx" id="fxSite"></div>
+    <audio id="music" preload="auto" loop>
+      <source src="assets/chest-pain-i-love.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+    <script>
+    const CONFIG = {
+      seuNome: "Felps",
+      nomeDela: "Isabelly",
+      inicioNamoroISO: "2025-09-16T02:14:00",
+      gta6ISO: "2026-11-19T00:00:00",
+      musicaNome: "Chest Pain (I Love)",
+      fallbackFoto: "assets/fallback.svg"
+    };
+
+    const intro = document.getElementById("intro");
+    const site = document.getElementById("site");
+    const btnWater = document.getElementById("btnWater");
+    const btnWaterSite = document.getElementById("btnWaterSite");
+    const btnEnter = document.getElementById("btnEnter");
+    const btnSkip = document.getElementById("btnSkip");
+    const btnTheme = document.getElementById("btnTheme");
+    const monthBadge = document.getElementById("monthBadge");
+    const subtitle = document.getElementById("subtitle");
+    const seasonValue = document.getElementById("seasonValue");
+    const dayValue = document.getElementById("dayValue");
+    const seasonGrowthFill = document.getElementById("seasonGrowthFill");
+    const themeValue = document.getElementById("themeValue");
+    const seasonLeft = document.getElementById("seasonLeft");
+    const siteTreeLevel = document.getElementById("siteTreeLevel");
+    const siteTreeHint = document.getElementById("siteTreeHint");
+    const btnLetter = document.getElementById("btnLetter");
+    const letterCard = document.getElementById("letterCard");
+    const btnSaveLetter = document.getElementById("btnSaveLetter");
+    const playerNow = document.getElementById("playerNow");
+    const btnPlayerPlay = document.getElementById("btnPlayerPlay");
+    const musicVolume = document.getElementById("musicVolume");
+    const wantedEl = document.getElementById("wanted");
+    const gtaTitle = document.getElementById("gtaTitle");
+    const couplePhoto = document.getElementById("couplePhoto");
+    const photoSkeleton = document.getElementById("photoSkeleton");
+    const themeColorMeta = document.getElementById("themeColorMeta");
+    const cutsceneClock = document.getElementById("cutsceneClock");
+    const cutsceneNote = document.getElementById("cutsceneNote");
+    const cutsceneFlash = document.getElementById("cutsceneFlash");
+    const seasonFinale = document.getElementById("seasonFinale");
+    const seasonBadge = document.getElementById("seasonBadge");
+    const seasonText = document.getElementById("seasonText");
+    const btnSaveMoment = document.getElementById("btnSaveMoment");
+    const btnReplayFinale = document.getElementById("btnReplayFinale");
+    const finaleCenterBadge = document.getElementById("finaleCenterBadge");
+    const bloomStop0 = document.getElementById("bloomStop0");
+    const bloomStop1 = document.getElementById("bloomStop1");
+    const bloomStop2 = document.getElementById("bloomStop2");
+
+    const treeWrap = document.getElementById("treeWrap");
+    const treeCard = document.getElementById("treeCard");
+    const hudLevel = document.getElementById("hudLevel");
+    const hudStatus = document.getElementById("hudStatus");
+    const water = document.getElementById("water");
+    const wateringCan = document.getElementById("wateringCan");
+    const canDrops = document.getElementById("canDrops");
+    const petals = document.getElementById("petals");
+    const particles = document.getElementById("particles");
+    const finaleRain = document.getElementById("finaleRain");
+    const toastEl = document.getElementById("toast");
+    const music = document.getElementById("music");
+    const btnToggleMusic = document.getElementById("btnToggleMusic");
+    const btnFx = document.getElementById("btnFx");
+    const fxSite = document.getElementById("fxSite");
+
+    const togetherMain = document.getElementById("togetherMain");
+    const togetherSub = document.getElementById("togetherSub");
+    const leftMain = document.getElementById("leftMain");
+    const leftSub = document.getElementById("leftSub");
+    const progressPct = document.getElementById("progressPct");
+    const barFill = document.getElementById("barFill");
+    const gtaDays = document.getElementById("gtaDays");
+    const gtaClock = document.getElementById("gtaClock");
+
+    const MAX_LEVEL = 10;
+    const LEVEL_KEY = "cinema_tree_level_v2";
+    const LAST_WATER_KEY = "cinema_tree_last_water_v2";
+    const THEME_KEY = "site_theme_v1";
+    const LETTER_KEY = "love_letter_saved_v1";
+    const VOLUME_KEY = "site_music_volume_v1";
+    const MONTH_BONUS_KEY = "month_bonus_v1";
+    const SEASON_KEY = "tree_season_v1";
+    const PALETTE_KEY = "tree_palette_v1";
+    const PETAL_MODE_KEY = "tree_infinite_petals_until_v1";
+    const REWARD_KEY = "tree_reward_variant_v1";
+
+    const SEASON_PALETTES = [
+      { name: "Sakura Rosa", bg1: "rgba(255,77,141,.20)", bg2: "rgba(142,202,230,.18)", bg3: "rgba(255,183,3,.12)", glow1: "rgba(255,120,185,.24)", glow2: "rgba(142,202,230,.14)", bloomDot: "rgba(255,133,190,.95)", particle: "rgba(255,248,252,.95)", bloom0: "rgba(255,202,228,.98)", bloom1: "rgba(255,120,185,.92)", bloom2: "rgba(255,120,185,.00)" },
+      { name: "Lavanda", bg1: "rgba(183,152,255,.20)", bg2: "rgba(132,146,255,.18)", bg3: "rgba(255,189,232,.12)", glow1: "rgba(183,152,255,.24)", glow2: "rgba(145,197,255,.18)", bloomDot: "rgba(210,168,255,.95)", particle: "rgba(242,232,255,.95)", bloom0: "rgba(235,209,255,.98)", bloom1: "rgba(175,128,255,.92)", bloom2: "rgba(175,128,255,.00)" },
+      { name: "Peach", bg1: "rgba(255,160,122,.22)", bg2: "rgba(255,209,145,.18)", bg3: "rgba(255,120,170,.12)", glow1: "rgba(255,174,128,.26)", glow2: "rgba(255,218,151,.18)", bloomDot: "rgba(255,170,145,.95)", particle: "rgba(255,243,224,.95)", bloom0: "rgba(255,228,198,.98)", bloom1: "rgba(255,164,124,.90)", bloom2: "rgba(255,164,124,.00)" },
+      { name: "Blue Neon", bg1: "rgba(87,160,255,.24)", bg2: "rgba(69,218,255,.18)", bg3: "rgba(124,127,255,.14)", glow1: "rgba(86,188,255,.28)", glow2: "rgba(84,232,255,.20)", bloomDot: "rgba(122,224,255,.95)", particle: "rgba(218,247,255,.95)", bloom0: "rgba(191,242,255,.98)", bloom1: "rgba(89,206,255,.90)", bloom2: "rgba(89,206,255,.00)" },
+      { name: "Sunset", bg1: "rgba(255,121,88,.22)", bg2: "rgba(255,84,148,.18)", bg3: "rgba(255,194,87,.14)", glow1: "rgba(255,123,109,.26)", glow2: "rgba(255,108,177,.20)", bloomDot: "rgba(255,126,158,.95)", particle: "rgba(255,229,214,.95)", bloom0: "rgba(255,208,189,.98)", bloom1: "rgba(255,109,150,.91)", bloom2: "rgba(255,109,150,.00)" },
+      { name: "Mint Dream", bg1: "rgba(120,255,209,.20)", bg2: "rgba(123,227,255,.17)", bg3: "rgba(255,154,220,.13)", glow1: "rgba(124,255,210,.24)", glow2: "rgba(115,221,255,.20)", bloomDot: "rgba(142,255,217,.95)", particle: "rgba(230,255,246,.95)", bloom0: "rgba(213,255,239,.98)", bloom1: "rgba(123,240,201,.90)", bloom2: "rgba(123,240,201,.00)" }
+    ];
+    const REWARD_VARIANTS = [
+      { text: "+1 temporada com a gente \u{1F430}\u{1F90D}", petalMinutes: 4 },
+      { text: "modo p\u00E9talas infinitas liberado", petalMinutes: 5 },
+      { text: "energia de filme ativada \u2728", petalMinutes: 3 }
+    ];
+
+    let typedBuffer = "";
+    let gtaTapCount = 0;
+    let introCutscenePlayed = false;
+    let windContext = null;
+    let isSeasonFinaleRunning = false;
+    let isSeasonReplayRunning = false;
+    const cutsceneTimers = [];
+
+    document.getElementById("introTitle").textContent = `${CONFIG.seuNome} & ${CONFIG.nomeDela} \u{1F430}\u{1F431}`;
+    document.getElementById("brandText").textContent = `${CONFIG.seuNome} & ${CONFIG.nomeDela}`;
+    document.getElementById("sig").textContent = CONFIG.seuNome;
+    playerNow.textContent = CONFIG.musicaNome;
+
+    const startDate = new Date(CONFIG.inicioNamoroISO);
+    const oneYearDate = new Date(startDate);
+    oneYearDate.setFullYear(oneYearDate.getFullYear() + 1);
+    const gtaDate = new Date(CONFIG.gta6ISO);
+
+    document.getElementById("gtaDate").textContent = formatDateBR(gtaDate);
+    document.getElementById("sinceLabel").textContent = `${formatDateBR(startDate)} \u2022 ${formatTimeBR(startDate)}`;
+    document.getElementById("todayValue").textContent = new Date().toLocaleDateString("pt-BR", {
+      weekday: "short", day: "2-digit", month: "2-digit"
+    });
+    document.getElementById("todaySmall").textContent = `toca ${CONFIG.musicaNome} \u{1F430}\u{1F3A7}`;
+
+    function stampDay(d = new Date()){
+      return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    }
+
+    function stampMonth(d = new Date()){
+      return `${d.getFullYear()}-${d.getMonth() + 1}`;
+    }
+
+    function getSeason(){
+      const v = parseInt(localStorage.getItem(SEASON_KEY) || "1", 10);
+      return isNaN(v) || v < 1 ? 1 : v;
+    }
+
+    function setSeason(n){
+      localStorage.setItem(SEASON_KEY, String(Math.max(1, n)));
+    }
+
+    function getPaletteIndex(){
+      const v = parseInt(localStorage.getItem(PALETTE_KEY) || "0", 10);
+      if (isNaN(v)) return 0;
+      return Math.max(0, Math.min(SEASON_PALETTES.length - 1, v));
+    }
+
+    function setPaletteIndex(n){
+      const clamped = Math.max(0, Math.min(SEASON_PALETTES.length - 1, n));
+      localStorage.setItem(PALETTE_KEY, String(clamped));
+      return clamped;
+    }
+
+    function getPetalModeUntil(){
+      const v = parseInt(localStorage.getItem(PETAL_MODE_KEY) || "0", 10);
+      return isNaN(v) ? 0 : v;
+    }
+
+    function setPetalModeForMinutes(minutes){
+      const until = Date.now() + Math.max(1, minutes) * 60 * 1000;
+      localStorage.setItem(PETAL_MODE_KEY, String(until));
+      return until;
+    }
+
+    function pickNextPaletteIndex(current){
+      if (SEASON_PALETTES.length <= 1) return 0;
+      let next = current;
+      while(next === current){
+        next = Math.floor(Math.random() * SEASON_PALETTES.length);
+      }
+      return next;
+    }
+
+    function pickRewardVariant(){
+      const last = parseInt(localStorage.getItem(REWARD_KEY) || "-1", 10);
+      let next = Math.floor(Math.random() * REWARD_VARIANTS.length);
+      if (REWARD_VARIANTS.length > 1 && next === last){
+        next = (next + 1) % REWARD_VARIANTS.length;
+      }
+      localStorage.setItem(REWARD_KEY, String(next));
+      return REWARD_VARIANTS[next];
+    }
+
+    function applySeasonPalette(index){
+      const safeIndex = setPaletteIndex(index);
+      const p = SEASON_PALETTES[safeIndex];
+      const root = document.documentElement.style;
+      root.setProperty("--season-bg1", p.bg1);
+      root.setProperty("--season-bg2", p.bg2);
+      root.setProperty("--season-bg3", p.bg3);
+      root.setProperty("--season-glow1", p.glow1);
+      root.setProperty("--season-glow2", p.glow2);
+      root.setProperty("--season-bloom-dot", p.bloomDot);
+      root.setProperty("--season-particle-color", p.particle);
+      root.setProperty("--season-card-ring", p.glow1);
+      if (themeValue) themeValue.textContent = `Tema: ${p.name} \u2728`;
+      if (bloomStop0) bloomStop0.setAttribute("stop-color", p.bloom0);
+      if (bloomStop1) bloomStop1.setAttribute("stop-color", p.bloom1);
+      if (bloomStop2) bloomStop2.setAttribute("stop-color", p.bloom2);
+      return p;
+    }
+
+    function getLevel(){
+      const v = parseInt(localStorage.getItem(LEVEL_KEY) || "0", 10);
+      return Math.max(0, Math.min(MAX_LEVEL, isNaN(v) ? 0 : v));
+    }
+
+    function setLevel(n){
+      localStorage.setItem(LEVEL_KEY, String(Math.max(0, Math.min(MAX_LEVEL, n))));
+    }
+
+    function canWaterToday(){
+      return localStorage.getItem(LAST_WATER_KEY) !== stampDay();
+    }
+
+    function markWater(){
+      localStorage.setItem(LAST_WATER_KEY, stampDay());
+    }
+
+    function applyLevel(level){
+      for(let i = 0; i <= MAX_LEVEL; i++) treeWrap.classList.remove(`level-${i}`);
+      treeWrap.classList.add("tree-wrap", `level-${level}`);
+      hudLevel.textContent = `\u{1F338} n\u00EDvel ${level}/${MAX_LEVEL}`;
+      treeWrap.style.setProperty("--intensity", String(level));
+      if (siteTreeLevel){
+        siteTreeLevel.textContent = `\u00C1rvore hoje: n\u00EDvel ${level}/${MAX_LEVEL}`;
+      }
+    }
+
+    function updateWaterUI(){
+      const level = getLevel();
+      const season = getSeason();
+      const left = Math.max(0, MAX_LEVEL - level);
+      const ready = canWaterToday() && !isSeasonFinaleRunning;
+      const petalModeLeftMs = getPetalModeUntil() - Date.now();
+      const petalModeActive = petalModeLeftMs > 0;
+      if (!petalModeActive && getPetalModeUntil() > 0) localStorage.removeItem(PETAL_MODE_KEY);
+      applyLevel(level);
+
+      if (seasonValue) seasonValue.textContent = `\u{1F338} Temporada ${season}`;
+      if (dayValue) dayValue.textContent = `\u{1F4A7} Dia: ${level}/${MAX_LEVEL}`;
+      if (seasonGrowthFill) seasonGrowthFill.style.width = `${(level / MAX_LEVEL) * 100}%`;
+      if (seasonLeft) seasonLeft.textContent = `faltam ${left} dias`;
+
+      btnWater.disabled = !ready;
+      if (isSeasonFinaleRunning){
+        btnWater.textContent = "Finalizando temporada...";
+        hudStatus.textContent = "\u{1F39E}\uFE0F finalizando";
+      } else {
+        btnWater.textContent = ready ? "Regar hoje \u{1F430}\u{1F4A7}" : "J\u00E1 regou hoje \u{1F338}\u{1F430}";
+        hudStatus.textContent = ready ? `\u{1F430} pronto \u2022 temporada ${season}` : "\u{1F431} ok por hoje";
+      }
+
+      if (btnWaterSite){
+        btnWaterSite.disabled = !ready;
+        btnWaterSite.textContent = isSeasonFinaleRunning
+          ? "Finalizando temporada..."
+          : (ready ? "Regar hoje \u{1F430}\u{1F4A7}" : "Rega conclu\u00EDda hoje \u{1F338}");
+      }
+      if (siteTreeHint){
+        if (petalModeActive){
+          const mins = Math.max(1, Math.ceil(petalModeLeftMs / 60000));
+          siteTreeHint.textContent = `modo p\u00E9talas infinitas ativo: ${mins} min`;
+        } else if (isSeasonFinaleRunning){
+          siteTreeHint.textContent = "temporada completa \u2022 preparando renascimento";
+        } else if (ready){
+          siteTreeHint.textContent = `faltam ${left} dias pra completar`;
+        } else {
+          siteTreeHint.textContent = "volta amanh\u00E3 pra continuar";
+        }
+      }
+    }
+
+    function spawnPetal(){
+      const el = document.createElement("div");
+      el.className = "petal";
+      el.textContent = "\u{1F338}";
+      el.style.left = `${Math.random() * 100}vw`;
+      el.style.animationDuration = `${6 + Math.random() * 6}s`;
+      el.style.setProperty("--drift", `${(Math.random() < 0.5 ? -1 : 1) * (10 + Math.random() * 60)}px`);
+      el.style.opacity = (0.35 + Math.random() * 0.55).toFixed(2);
+      petals.appendChild(el);
+      setTimeout(() => el.remove(), 14000);
+    }
+
+    function spawnParticle(){
+      const el = document.createElement("div");
+      el.className = "particle";
+      el.textContent = Math.random() < 0.6 ? "\u2728" : "\u{1F4AB}";
+      el.style.left = `${10 + Math.random() * 80}vw`;
+      el.style.top = `${20 + Math.random() * 55}vh`;
+      el.style.animationDuration = `${2.8 + Math.random() * 3.5}s`;
+      particles.appendChild(el);
+      setTimeout(() => el.remove(), 7000);
+    }
+
+    function burstCinema(){
+      const lvl = getLevel();
+      const p = 18 + lvl * 4;
+      const s = 10 + lvl * 2;
+      for(let i = 0; i < p; i++) setTimeout(spawnParticle, i * 45);
+      for(let i = 0; i < s; i++) setTimeout(spawnPetal, i * 120);
+      treeCard.classList.add("cinemaPulse");
+      setTimeout(() => treeCard.classList.remove("cinemaPulse"), 1400);
+    }
+
+    function queueCutscene(fn, delay){
+      const t = setTimeout(fn, delay);
+      cutsceneTimers.push(t);
+    }
+
+    function clearCutsceneTimers(){
+      while(cutsceneTimers.length){
+        clearTimeout(cutsceneTimers.pop());
+      }
+    }
+
+    async function playWindAmbience(durationMs = 2000){
+      try{
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        if (!windContext) windContext = new AC();
+        if (windContext.state === "suspended") await windContext.resume();
+
+        const sampleRate = windContext.sampleRate;
+        const buffer = windContext.createBuffer(1, sampleRate * 2, sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+
+        const src = windContext.createBufferSource();
+        src.buffer = buffer;
+        src.loop = true;
+
+        const filter = windContext.createBiquadFilter();
+        filter.type = "lowpass";
+        filter.frequency.value = 560;
+        filter.Q.value = 0.8;
+
+        const gain = windContext.createGain();
+        const now = windContext.currentTime;
+        const end = now + (durationMs / 1000);
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.015, now + 0.28);
+        gain.gain.exponentialRampToValueAtTime(0.0001, end);
+
+        src.connect(filter);
+        filter.connect(gain);
+        gain.connect(windContext.destination);
+        src.start(now);
+        src.stop(end + 0.05);
+      }catch(e){
+        // autoplay/audio context can be blocked on some browsers
+      }
+    }
+
+    function spawnCanDrop(){
+      if (!canDrops) return;
+      const drop = document.createElement("span");
+      drop.className = "can-drop";
+      drop.style.setProperty("--dx", `${-10 - Math.random() * 20}px`);
+      drop.style.animationDuration = `${0.65 + Math.random() * 0.32}s`;
+      canDrops.appendChild(drop);
+      setTimeout(() => drop.remove(), 1200);
+    }
+
+    function animateCanPour(){
+      if (!wateringCan) return;
+      wateringCan.classList.remove("pouring");
+      void wateringCan.offsetWidth;
+      wateringCan.classList.add("pouring");
+      for(let i = 0; i < 18; i++) setTimeout(spawnCanDrop, i * 46);
+      setTimeout(() => wateringCan.classList.remove("pouring"), 1080);
+    }
+
+    function triggerBloomImpact(){
+      treeWrap.classList.remove("bloom-pop");
+      void treeWrap.offsetWidth;
+      treeWrap.classList.add("bloom-pop");
+      setTimeout(() => treeWrap.classList.remove("bloom-pop"), 760);
+    }
+
+    function spawnFinaleRainItem(){
+      if (!finaleRain) return;
+      const el = document.createElement("span");
+      el.className = "rain-item";
+      const emojis = ["\u{1F338}", "\u2728", "\u{1F497}", "\u{1F430}", "\u{1F431}"];
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = `${Math.random() * 100}%`;
+      el.style.fontSize = `${16 + Math.random() * 18}px`;
+      el.style.animationDuration = `${1.7 + Math.random() * 1.4}s`;
+      el.style.setProperty("--drift", `${(Math.random() < 0.5 ? -1 : 1) * (20 + Math.random() * 70)}px`);
+      finaleRain.appendChild(el);
+      setTimeout(() => el.remove(), 3400);
+    }
+
+    function burstFinaleRain(count = 56){
+      for(let i = 0; i < count; i++){
+        setTimeout(spawnFinaleRainItem, i * 28);
+      }
+    }
+
+    async function playDing(){
+      try{
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        if (!windContext) windContext = new AC();
+        if (windContext.state === "suspended") await windContext.resume();
+
+        const now = windContext.currentTime;
+        const osc = windContext.createOscillator();
+        const gain = windContext.createGain();
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(1046, now);
+        osc.frequency.exponentialRampToValueAtTime(1568, now + 0.14);
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.05, now + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.36);
+        osc.connect(gain);
+        gain.connect(windContext.destination);
+        osc.start(now);
+        osc.stop(now + 0.37);
+      }catch(e){
+        // audio can be blocked in some devices
+      }
+    }
+
+    function replaySeasonFinaleVisual(){
+      treeWrap.classList.remove("season-finale");
+      void treeWrap.offsetWidth;
+      treeWrap.classList.add("season-finale");
+      triggerBloomImpact();
+      burstCinema();
+      burstFinaleRain(64);
+      if (finaleCenterBadge){
+        finaleCenterBadge.classList.remove("show");
+        void finaleCenterBadge.offsetWidth;
+        finaleCenterBadge.classList.add("show");
+      }
+      cutsceneFlash.classList.remove("flash-now");
+      void cutsceneFlash.offsetWidth;
+      cutsceneFlash.classList.add("flash-now");
+      setTimeout(() => treeWrap.classList.remove("season-finale"), 1700);
+    }
+
+    function runSeasonCompletionSequence(){
+      if (isSeasonFinaleRunning) return;
+      isSeasonFinaleRunning = true;
+      updateWaterUI();
+      const introWasHidden = intro.classList.contains("hide");
+      if (introWasHidden){
+        intro.classList.remove("hide");
+        intro.classList.add("season-showcase");
+        intro.setAttribute("aria-hidden", "false");
+      }
+
+      if (seasonFinale) seasonFinale.classList.add("show");
+      if (seasonBadge) seasonBadge.textContent = "\u00C1rvore Completa \u{1F338}";
+      if (seasonText) seasonText.textContent = "temporada no cl\u00EDmax...";
+
+      replaySeasonFinaleVisual();
+
+      const reward = pickRewardVariant();
+
+      setTimeout(() => {
+        playDing();
+        setPetalModeForMinutes(reward.petalMinutes);
+        if (seasonText) seasonText.textContent = reward.text;
+        toast(`\u{1F389} Temporada ${getSeason()} completa!`);
+      }, 1400);
+
+      setTimeout(() => {
+        const previous = getPaletteIndex();
+        const nextPalette = pickNextPaletteIndex(previous);
+        const nextSeason = getSeason() + 1;
+        setSeason(nextSeason);
+        setLevel(0);
+        applySeasonPalette(nextPalette);
+        isSeasonFinaleRunning = false;
+        updateWaterUI();
+        if (introWasHidden){
+          intro.classList.remove("season-showcase");
+          intro.classList.add("hide");
+          intro.setAttribute("aria-hidden", "true");
+        }
+        if (seasonBadge) seasonBadge.textContent = `Temporada ${nextSeason} iniciada \u{1F308}`;
+        if (seasonText) seasonText.textContent = `Novo tema desbloqueado: ${SEASON_PALETTES[nextPalette].name}`;
+        toast(`\u{1F308} Novo tema: ${SEASON_PALETTES[nextPalette].name}`);
+      }, 3300);
+    }
+
+    function startIntroCutscene(){
+      if (introCutscenePlayed) return;
+      introCutscenePlayed = true;
+      intro.classList.remove("cutscene-done", "act-1", "act-2", "act-3");
+      intro.classList.add("cutscene-running", "act-1");
+      btnEnter.classList.remove("show");
+      if (cutsceneClock) cutsceneClock.textContent = `16/09 \u2022 02:14`;
+      if (cutsceneNote) cutsceneNote.textContent = "ela cresceu";
+      playWindAmbience(2000);
+
+      queueCutscene(() => {
+        intro.classList.remove("act-1");
+        intro.classList.add("act-2");
+        for(let i = 0; i < 24; i++) queueCutscene(spawnPetal, i * 220);
+        for(let i = 0; i < 42; i++) queueCutscene(spawnParticle, i * 125);
+      }, 2000);
+
+      queueCutscene(() => {
+        intro.classList.remove("act-2");
+        intro.classList.add("act-3");
+        cutsceneFlash.classList.remove("flash-now");
+        void cutsceneFlash.offsetWidth;
+        cutsceneFlash.classList.add("flash-now");
+        btnEnter.classList.add("show");
+        burstCinema();
+      }, 8000);
+
+      queueCutscene(() => {
+        intro.classList.add("cutscene-done");
+        intro.classList.remove("cutscene-running", "act-1", "act-2", "act-3");
+      }, 9000);
+    }
+
+    function waterTree(){
+      if (!canWaterToday() || isSeasonFinaleRunning) return false;
+      const current = getLevel();
+      const next = Math.min(MAX_LEVEL, current + 1);
+      setLevel(next);
+      markWater();
+      applyLevel(next);
+
+      animateCanPour();
+
+      water.classList.remove("pour");
+      void water.offsetWidth;
+      water.classList.add("pour");
+      setTimeout(triggerBloomImpact, 360);
+      hudStatus.textContent = "\u{1F4A7} regando...";
+      setTimeout(() => { hudStatus.textContent = "\u{1F338} ficou mais linda"; }, 520);
+
+      burstCinema();
+      if (next >= MAX_LEVEL){
+        toast("Dia 10/10 \u{1F338} \u00C1rvore completa!");
+        runSeasonCompletionSequence();
+      } else {
+        toast(`Dia ${next}/${MAX_LEVEL} \u{1F338} continua...`);
+      }
+      updateWaterUI();
+      return true;
+    }
+
+    btnWater.addEventListener("click", waterTree);
+    if (btnWaterSite) btnWaterSite.addEventListener("click", waterTree);
+    if (btnSaveMoment){
+      btnSaveMoment.addEventListener("click", () => {
+        toast("Momento salvo. Printa essa tela agora \u{1F4F8}");
+        if (seasonText) seasonText.textContent = "momento salvo \u2022 print recomendado";
+      });
+    }
+    if (btnReplayFinale){
+      btnReplayFinale.addEventListener("click", () => {
+        if (isSeasonReplayRunning) return;
+        isSeasonReplayRunning = true;
+        replaySeasonFinaleVisual();
+        toast("replay da cutscene \u{1F39E}\uFE0F");
+        setTimeout(() => { isSeasonReplayRunning = false; }, 1900);
+      });
+    }
+
+    setInterval(() => {
+      const lvl = getLevel();
+      const infinitePetals = Date.now() < getPetalModeUntil();
+      if (infinitePetals){
+        spawnPetal();
+        if (Math.random() < 0.84) spawnParticle();
+        return;
+      }
+      if (lvl >= 2 && Math.random() < 0.42) spawnParticle();
+      if (lvl >= 4 && Math.random() < 0.30) spawnPetal();
+    }, 1400);
+
+    function showSite(){
+      clearCutsceneTimers();
+      intro.classList.add("cutscene-done");
+      intro.classList.remove("cutscene-running", "act-1", "act-2", "act-3");
+      intro.classList.add("hide");
+      intro.setAttribute("aria-hidden", "true");
+      site.classList.add("show");
+      site.setAttribute("aria-hidden", "false");
+      toast(`oi, ${CONFIG.nomeDela} \u{1F430}\u{1F431}`);
+      music.load();
+      tryPlay().then((ok) => {
+        if (!ok) toast("musica bloqueada no navegador, toca no \u25B6");
+      });
+    }
+    btnEnter.addEventListener("click", showSite);
+    btnSkip.addEventListener("click", showSite);
+
+    function tick(){
+      const now = new Date();
+
+      const diff = now - startDate;
+      if (diff >= 0){
+        const sec = Math.floor(diff / 1000);
+        const min = Math.floor(sec / 60);
+        const hr = Math.floor(min / 60);
+        const days = Math.floor(hr / 24);
+        togetherMain.textContent = `${days} dias`;
+        togetherSub.textContent = `${pad(hr % 24)}h ${pad(min % 60)}m ${pad(sec % 60)}s \u{1F430}`;
+      } else {
+        togetherMain.textContent = "\u2014";
+        togetherSub.textContent = "confere o ano no CONFIG \u{1F430}";
+      }
+
+      const left = oneYearDate - now;
+      if (left <= 0){
+        leftMain.textContent = "1 ano \u{1F430}\u2728";
+        leftSub.textContent = "a gente chegou. \u{1F431}\u{1F90D}";
+      } else {
+        const sec = Math.floor(left / 1000);
+        const min = Math.floor(sec / 60);
+        const hr = Math.floor(min / 60);
+        const days = Math.floor(hr / 24);
+        leftMain.textContent = `${days} dias`;
+        leftSub.textContent = `${pad(hr % 24)}h ${pad(min % 60)}m ${pad(sec % 60)}s \u{1F431}`;
+      }
+
+      const totalYear = oneYearDate - startDate;
+      const passed = Math.max(0, Math.min(totalYear, now - startDate));
+      const pct = totalYear > 0 ? (passed / totalYear) * 100 : 0;
+      barFill.style.width = `${pct.toFixed(2)}%`;
+      progressPct.textContent = `${pct.toFixed(1)}% \u{1F430}`;
+
+      const gleft = gtaDate - now;
+      if (gleft <= 0){
+        gtaDays.textContent = "0";
+        gtaClock.textContent = "LAN\u00C7OU!! \u{1F525}";
+      } else {
+        const sec = Math.floor(gleft / 1000);
+        const min = Math.floor(sec / 60);
+        const hr = Math.floor(min / 60);
+        const days = Math.floor(hr / 24);
+        gtaDays.textContent = String(days);
+        gtaClock.textContent = `${pad(hr % 24)}h ${pad(min % 60)}m ${pad(sec % 60)}s`;
+      }
+    }
+
+    function toast(msg){
+      if (!toastEl) return;
+      toastEl.textContent = msg;
+      toastEl.classList.add("show");
+      clearTimeout(toastEl._t);
+      toastEl._t = setTimeout(() => toastEl.classList.remove("show"), 1600);
+    }
+
+    function syncPlayerButtons(){
+      const isPaused = music.paused;
+      btnToggleMusic.textContent = isPaused ? "tocar m\u00FAsica" : "pausar m\u00FAsica";
+      btnPlayerPlay.textContent = isPaused ? "\u25B6" : "\u23F8";
+    }
+
+    async function tryPlay(){
+      try{
+        await music.play();
+      }catch(e){
+        return false;
+      }
+      syncPlayerButtons();
+      return true;
+    }
+
+    function toggleMusic(){
+      if (music.paused){
+        tryPlay().then((ok) => {
+          if (!ok) toast("autoplay bloqueado \u{1F430} (clica de novo)");
+        });
+      } else {
+        music.pause();
+      }
+      syncPlayerButtons();
+    }
+
+    btnToggleMusic.addEventListener("click", toggleMusic);
+    btnPlayerPlay.addEventListener("click", toggleMusic);
+    music.addEventListener("play", syncPlayerButtons);
+    music.addEventListener("pause", syncPlayerButtons);
+    music.addEventListener("error", () => {
+      playerNow.textContent = "m\u00FAsica indispon\u00EDvel";
+      toast("arquivo de m\u00FAsica n\u00E3o encontrado");
+    });
+
+    musicVolume.addEventListener("input", () => {
+      const vol = Math.max(0, Math.min(1, Number(musicVolume.value)));
+      music.volume = vol;
+      localStorage.setItem(VOLUME_KEY, String(vol));
+    });
+
+    function spawnFx(container, fromBottom = true, big = false){
+      const el = document.createElement("div");
+      el.className = "fxItem";
+      const emojis = ["\u{1F430}","\u{1F407}","\u{1F431}","\u{1F63A}","\u{1F90D}","\u2728","\u{1F4AB}","\u{1F496}","\u{1F338}","\u{1F497}"];
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+      const left = Math.random() * 100;
+      const size = (big ? 18 : 12) + Math.random() * (big ? 16 : 12);
+      const duration = 6 + Math.random() * 6;
+      const drift = (Math.random() < 0.5 ? -1 : 1) * (10 + Math.random() * 56);
+
+      el.style.left = `${left}vw`;
+      el.style.bottom = fromBottom ? "-20px" : `${Math.random() * 60 + 10}vh`;
+      el.style.fontSize = `${size}px`;
+      el.style.animationDuration = `${duration}s`;
+      el.style.setProperty("--drift", `${drift}px`);
+
+      container.appendChild(el);
+      setTimeout(() => el.remove(), duration * 1000);
+    }
+
+    function burstFx(container, n = 28, big = true){
+      for(let i = 0; i < n; i++){
+        setTimeout(() => spawnFx(container, true, big), i * 22);
+      }
+    }
+
+    if (btnFx && fxSite){
+      btnFx.addEventListener("click", () => burstFx(fxSite, 36, true));
+    }
+
+    function triggerWanted(){
+      wantedEl.classList.add("show");
+      setTimeout(() => wantedEl.classList.remove("show"), 1600);
+      burstFx(fxSite, 24, true);
+      toast("\u{1F693}\u2B50 wanted level");
+    }
+
+    gtaTitle.addEventListener("click", () => {
+      gtaTapCount += 1;
+      if (gtaTapCount >= 6){
+        gtaTapCount = 0;
+        triggerWanted();
+      }
+    });
+
+    document.addEventListener("keydown", (ev) => {
+      const key = (ev.key || "").toLowerCase();
+      if (key.length !== 1) return;
+      typedBuffer = (typedBuffer + key).slice(-20);
+      if (typedBuffer.includes("isabelly")){
+        typedBuffer = "";
+        burstFx(fxSite, 60, true);
+        toast("chuva de \u{1F430}\u{1F431}\u{1F338}");
+      }
+    });
+
+    function applyTheme(theme){
+      const next = theme === "rose" ? "rose" : "night";
+      document.body.dataset.theme = next;
+      btnTheme.textContent = next === "night" ? "\u{1F338} rosa" : "\u{1F319} noite";
+      themeColorMeta.setAttribute("content", next === "night" ? "#04040a" : "#2a1021");
+      localStorage.setItem(THEME_KEY, next);
+    }
+
+    btnTheme.addEventListener("click", () => {
+      applyTheme(document.body.dataset.theme === "night" ? "rose" : "night");
+    });
+
+    function initLetter(){
+      btnLetter.addEventListener("click", () => {
+        const isOpen = letterCard.classList.toggle("open");
+        btnLetter.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      btnSaveLetter.addEventListener("click", () => {
+        localStorage.setItem(LETTER_KEY, `guardada em ${new Date().toISOString()}`);
+        btnSaveLetter.textContent = "guardado \u{1F90D}";
+        toast("cartinha guardada \u{1F90D}");
+      });
+
+      if (localStorage.getItem(LETTER_KEY)){
+        btnSaveLetter.textContent = "guardado \u{1F90D}";
+      }
+    }
+
+    function applyMonthversary(){
+      const now = new Date();
+      const isDay16 = now.getDate() === 16;
+      monthBadge.hidden = !isDay16;
+      if (!isDay16) return;
+
+      subtitle.textContent = "Hoje \u00E9 dia 16: mini festa ligada, rega b\u00F4nus e chuva de carinho. \u{1F430}\u{1F338}";
+      const marker = stampMonth(now);
+      if (localStorage.getItem(MONTH_BONUS_KEY) !== marker){
+        setLevel(Math.min(MAX_LEVEL, getLevel() + 1));
+        localStorage.setItem(MONTH_BONUS_KEY, marker);
+        updateWaterUI();
+        burstFx(fxSite, 52, true);
+        for(let i = 0; i < 20; i++) setTimeout(spawnPetal, i * 90);
+        toast("M\u00EAsvers\u00E1rio \u{1F430}\u2728 +1 n\u00EDvel");
+      }
+    }
+
+    function initPhoto(){
+      const hideSkeleton = () => photoSkeleton.classList.add("hide");
+      couplePhoto.addEventListener("load", hideSkeleton, { once: true });
+      couplePhoto.addEventListener("error", () => {
+        couplePhoto.src = CONFIG.fallbackFoto;
+        hideSkeleton();
+      }, { once: true });
+
+      if (couplePhoto.complete){
+        if (couplePhoto.naturalWidth > 0) hideSkeleton();
+        else couplePhoto.src = CONFIG.fallbackFoto;
+      }
+    }
+
+    function registerPWA(){
+      if ("serviceWorker" in navigator){
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      }
+    }
+
+    window.addEventListener("load", () => {
+      const storedTheme = localStorage.getItem(THEME_KEY) || "night";
+      const storedVolume = Number(localStorage.getItem(VOLUME_KEY));
+      if (!localStorage.getItem(SEASON_KEY)) setSeason(1);
+      applyTheme(storedTheme);
+      applySeasonPalette(getPaletteIndex());
+      music.volume = Number.isFinite(storedVolume) ? Math.max(0, Math.min(1, storedVolume)) : 0.8;
+      musicVolume.value = String(music.volume);
+      syncPlayerButtons();
+
+      initLetter();
+      initPhoto();
+      applyMonthversary();
+      updateWaterUI();
+      tick();
+      setInterval(tick, 1000);
+      startIntroCutscene();
+      registerPWA();
+    });
+
+    function pad(n){ return String(n).padStart(2, "0"); }
+    function formatDateBR(d){ return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" }); }
+    function formatTimeBR(d){ return d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }); }
+  </script>
+</body>
+</html>
