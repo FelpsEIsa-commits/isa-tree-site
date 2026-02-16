@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Foto indisponível">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#321228"/>
+      <stop offset="100%" stop-color="#110914"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="280" r="110" fill="rgba(255,255,255,.22)"/>
+  <rect x="350" y="430" width="500" height="220" rx="120" fill="rgba(255,255,255,.16)"/>
+  <text x="600" y="735" fill="#ffd7e8" font-size="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">Foto indisponível agora 💗</text>
+</svg>
